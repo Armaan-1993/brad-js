@@ -212,7 +212,7 @@ This is the output:
 *
 ```incldues()``` method is used to see if a string has a particlalur charater or string. If it does , it will yeild a true or else false. 
 
-012 Template Literals:
+# 012 Template Literals:
 
 * We use template literals to add data to html tags and display them in the browser.
 
