@@ -244,5 +244,55 @@ Here , it is ```document.body.innerHTML=html```
 
 # 013 Arrays - Array Methods:
 
+*indexOF() methid is used ti find the index of an array element. This can be used in strings as well.
+
+```pop()``` = remove elemnet from right
+```shift()``` = remove element feom left
+```push(100)``` = pushes element 100 into the right
+```unshift(100)``` = pushes element 100 to the left.
+Note: You dont need to add an element insode then braces in case of pop and shift. It will remove one element at a time.
+
+Note:
+
+Doing operrations like pop, push etc doesnt need to be assgnd that value to a variable.
+However for operations like concat , length etc , we need to assign that operatoion's output to a variable. Then only we'll get the output.
+
+The sort function can be used to sort the elements in acsending or descending order:
+
+Ascending:
+```
+val = array.sort(function (x, y) {
+  return x - y;
+});
+```
+Decending:
+```
+val = array.sort(function (x, y) {
+  return y - x;
+});
+```
+# 014 Object Literals:
+
+You can also called a value from an object by using this syntax:
+
+```
+val = myDetails["hobbies"];
+```
+Here , val is a variable , myDetails is an object and hobbies is an an object element.
+
+If you define a function as value for a key in an object , you and if you want to access the value of other keys in the same object
+to perform an operation inside that function, we use the ```this.``` keyword , or else it will throw an error.
+
+eg:
+
+```
+yearOfBirth: (birthYear = () => {
+      return 1993 - this.age;
+    })
+```
+Here , we use the value of the key ```age``` inside the function and to access it , we need the ```this.``` keyword.
+
+# 015 Date Times:
+
 
 
