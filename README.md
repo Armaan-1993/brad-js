@@ -153,3 +153,96 @@ a decimal and also round them to the higer number using ```Math.floor```
 
 
 # 011 String Methods Concatenation:
+
+Appending strings will leave a space between them:
+
+eg:
+```
+const name = "Armaan";
+name += "Mathew";
+console.log(name);
+```
+
+* Using \ will take away the power of a character.
+
+eg:
+
+```console.log("yo waaddddup niggah you ain't amazing");```
+
+Here, since we are already using a ```'``` in the beginning and end , we need to use \ to take the power away from the ```'``` used in
+```ain't``` or else it will yeild an undesired output.
+
+* Using .concat() method:
+
+```let newstring = first.concat(" ", last);```
+
+* To find the a character at an index of a string:
+```let val = first[2];```
+
+* To find the index of a string:
+
+```val = first.indexOf("A");```
+
+* .charAt() method is used to find the character at a given index.
+```val = first.charAt(first.length - 1);``` - It is used to find the last character of a string.
+
+*
+```
+val = first.slice(0, 3);
+val = first.slice(-3); // this will slice from behind
+val = first.substring(0, 4);
+```
+
+The ```slice``` and ```substring``` method are used to derive a portion of the string.
+
+*string.split(",") = Using this method will split at the point where JS encounters the character given inside the (",").
+Here , it will split at the comma.
+
+eg:
+
+```
+val = "Hi , yo my name is Armaan and I am a yolo";
+newVal = val.split("y");
+```
+
+This is the output:
+
+```["Hi , ", "o m", " name is Armaan and I am a ", "olo"]```
+
+*
+```incldues()``` method is used to see if a string has a particlalur charater or string. If it does , it will yeild a true or else false. 
+
+012 Template Literals:
+
+* We use template literals to add data to html tags and display them in the browser.
+
+They can be used to add any form of data to the HTML tags which is in turn displayed in the browser.
+
+eg:
+
+```
+let html = `<ul>
+    <li>First name: ${firstName}</li>
+    <li>Last name: ${lastName}</li>
+    <li>Age: ${age}</li>
+    <li>Work: ${work}</li>
+    <li>Sex: ${sex}</li>
+    <li>${hello()}</li>
+    <li>${2 + 5 + 5 * 5 + 6}</li>
+    <li>${age < 26 ? "I'm young" : "I'm not too young"}</li>    
+    <li>${difference()}</li>
+  </ul>`;
+```
+
+Note: Since this is used in a JS file , we need to add backticks and then only use the tags inside them or else javaScript
+will not recognise these tags.
+
+Also , note that in order to display them in the browser , we need to specify the path of the html and assign it to the string
+consisiting of the data:
+
+Here , it is ```document.body.innerHTML=html```
+
+# 013 Arrays - Array Methods:
+
+
+
