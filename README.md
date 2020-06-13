@@ -294,5 +294,106 @@ Here , we use the value of the key ```age``` inside the function and to access i
 
 # 015 Date Times:
 
+Date is a data type used to get the date and time.
+
+It's defined as ```variable = new Date()```.
+
+A different date and time can be added to the date data type by this manner :
+
+```val = new Date('10-10-1993 12:34:03')```
+
+You can get the date, time , year and many information from the date object by :
+
+```val = today.getMonth();``` and it will display the month.
+If you want to get random time for live date ,
+use this:
+
+```
+let today = new Date();
+let val = today.getTime();
+console.log(val);
+```
+
+To manupulate dates , time , etc
+we use
+```.setDate(9);``` 
+
+ 
+# 016 If Statements and Conditional Operators:
+
+We use ```===``` to check the value and the data type. To avoid problems , ```===``` is preffered over ```==```.
+
+eg:
+
+Here in this case , it would yeild correct even if ```name = 123``` or if ```name = "123"```. .
+
+```
+const checkIfCorrect = () => {
+  if (name == 123) {
+    return "Correct";
+  } else {
+    return "Incorrect";
+  }
+};
+console.log(checkIfCorrect());
+```
+
+This the problem of using ```==```
+
+* To check if a variable is undefined or not , we use
+
+```
+let name;
+if (typeof name === "undefined") {
+  console.log("It is undefined");
+} else {
+  console.log("It is not undefined");
+}
+```
+* TERNARY OPERATORS:
+
+```
+let value = 130;
+const checkIfCorrect = () => {
+  return (value === 134 ? `It's ${value}` : `It's not ${value}`); // 
+};
+console.log(checkIfCorrect());
+```
+
+```(value === 134 ? `It's ${value}` : `It's not ${value}`); ``` = This statement is such that the if the condition is true ie ? , then we need to do something , or else (:) , we need to do something else.
+
+*JS doesn't exactly need the curly braces to work. It can work otherwise too , but it is recommended.
+
+```
+let number = 50;
+if (number === 56)
+console.log(56);
+else console.log("not 56");
+```
+
+# 017 Switches:
+
+* Swiches are suggested to be used when there are like a lot of cases ,rather than using many if and else if statements.
+
+```
+let name = "Armaan";
+switch (name) {
+  case "Armaan":
+    console.log(`The ${name} is Armaan`);
+    break;
+  case "Philp":
+    console.log(`The ${name} is not Armaan`);
+    break;
+  case "Mathew":
+    console.log(`The ${name} is not Armaan`);
+    break;
+}
+```
+This is the syntax for a switch statement. However , we need to use ```break``` to break the execution or else if will go through
+evry conditon (print all consoles in this case).
+
+Note:  Here, the ```default``` is used in place of ```else``` which is used to end the list of conditional statements.
+It basically does the same thing as else statement.
+
 
 
