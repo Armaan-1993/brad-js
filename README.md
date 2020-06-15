@@ -395,5 +395,297 @@ evry conditon (print all consoles in this case).
 Note:  Here, the ```default``` is used in place of ```else``` which is used to end the list of conditional statements.
 It basically does the same thing as else statement.
 
+# 018 Function Declerations:
+
+* If we do not provide an argument to a function , when teh argument value is called , we get the output as "undefined".
+Hence , we need to set the argument value as a default , even though in cases we do not pass an argument value.
+
+This is done by the following Method:
+
+```
+const myName = (firstName = 'Rehaan', middleName = 'John', lastName = 'Mathew') => {
+  return `My name is ${firstName} ${middleName} ${lastName}`;
+};
+console.log(myName());
+```
+Here, ```firstName = 'Rehaan', middleName = 'John', lastName = 'Mathew'``` , the argument variables are set to a default value of
+'Rehaan' , 'John' and 'Mathew' and it will display Rehaan John Mathew and not as "undefined" , if we provide no values to the arguments.
+
+Note: Default casing can be done in the case of numbers too
+
+```
+const myNumber = (num = 81) => {
+  return Math.sqrt(num);
+};
+console.log(myNumber());
+```
+
+* IIFE (Immediately invokabale function expression) is an function which has an expression and decleration.
+
+An example of its syntax is:
+
+```
+(myFunction = (age) => {
+  console.log(`I'm ${age} years old`);
+})(20);
+```
+An IIFY is written inside an () and is same as writting a function. It can even have parameters and arguments too.
+
+**When a function is put inside an object , it is called as Method.
+
+
+# 019 General Loops:
+
+* Using ```continue``` statyement: Its used to let JS know that we want  to head on to with the next iteration execution after the
+condition we want is satisfied.
+
+eg:
+```
+for (let i = 0; i < 10; i++) {
+  if (i === 4) {
+    console.log("I'm awesome");
+    continue;
+  }
+  console.log(`Number ${i}`);
+}
+```
+* Break Statement is used to break the loop:
+
+eg:
+
+```
+for (let i = 0; i <= 13; i++) {
+  if (i === 3) {
+    console.log("I'm awesome");
+    continue;
+  } else if (i === 8) {
+    console.log("The loop has broken");
+    break;
+  }
+  console.log(`Number ${i}`);
+}
+```
+
+* While loop is such that the control enters the loop only if the first conditon satisfies the while loop condtion.
+
+```
+let i = 8;
+
+while (i < 12) {
+  console.log(`Number ${i}`);
+  i++;
+}
+```
+
+* A do while loop is such that it runs the conditon set inside the ```do``` even if the  first conditon doesnt satisfy the while
+loop condition and does not enter the loop.
+
+eg:
+
+```
+let j = 23;
+
+do {
+  console.log(`${j} is the number!!`);
+  j++;
+} while (j < 13);
+```
+
+Output:
+
+```23 is the number!!```
+
+Here , the condition is false , but it will run anyway based on the condition given inside the ```do```.
+
+* For each:
+
+eg:
+
+```
+let array = ["cars", "bikes", "trucks", "trains"];
+array.forEach((array) => {
+  console.log(array);
+});
+```
+It'a an alternative to the traditional for loop statement. It basically reads "for each element , take it and do the 
+condition for the array"
+
+Here , in ```console.log()``` , we use ```array``` to print the elements of the array and not ```array[i]```. 
+That's how for each works.
+
+
+#020 Window Object:
+
+When we use console.log ,we are actually using it insode the window object ie it is already running insode teh window object ,
+so we dont need to type in window.console.log() , coz that's wnhat it means.
+
+* Alert:
+It is used to popup a value to the browser.
+
+syntax:
+
+```alert("Hello");```
+
+* Prompt:
+
+It is the same as alert , except you need to input a value to the browser after prompting and it will be displayed in the browser.
+
+syntax:
+
+```const myInput = prompt();
+   alert(myInput);
+```
+
+* Confirm 
+
+It is used to prompt for confirmation before you do something. 
+
+Syntax:
+
+```
+if (confirm("Are you sure?")) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+```
+
+*Outer and inner dimentsion values:
+
+Nots that height is measured from the top of the browser displaye window till the console. Hence , if the size of the console is redeuced ,
+ height increases.
+
+ Syntax:
+
+```
+val = window.innerHeight;
+val = window.innerWidth;
+
+//outer height
+val = window.outerHeight;
+val = window.outerWidth;
+```
+* Scroll X and :
+
+Here , X is for horizontal width and Y is for height
+
+So scroll x and y gives you the point of the mouse where you have scrolled to.
+
+syntax:
+
+```
+val = window.scrollY;
+val = window.scrollX;
+
+console.log(val);
+```
+* Location object:
+
+It will display the key attributes of the location object.
+
+syntax:
+
+```
+val = window.location;
+val = window.location.hostname;
+val = window.location.href;
+val = window.location.port;
+val = window.location.search;
+```
+
+* Redirect:
+
+If you want to redirect to a different site , then we can edit the href in the location object.
+
+syntax:
+
+```window.location.href = "http://www.google.com";```
+
+* Reload:
+
+If you want to relaod the site then we use reload(). It is given as function.
+
+```window.location.reload();```
+
+* History Object:
+
+It takes you to the previous site you went to based on the numbr=er you type in the ()
+
+synatx:
+
+```indow.history.go(-2);```
+
+History length:
+
+It shows the number of sites in the history.
+
+```
+val = window.history.length;
+console.log(val);
+```
+
+
+* Navigator object:
+
+It gives the properties of the browser.
+
+syntax:
+
+```
+val = window.navigator;
+val = window.navigator.appCodeName;
+val = window.navigator.appVersion;
+val = window.navigator.geolocation;
+
+console.log(val);
+```
+
+# 021 Scope of Variables:
+
+Using the three declaration keywords  var , let , const  ,we see that var is not particularluy favourable since using it to define
+a varibale inside a block scope , such as an if condition will change the value of the variable.
+
+eg:
+
+```
+if (true) {
+  var a = 7;
+  let b = 23;
+  const c = 45;
+  console.log(`Global scope variables are ${a} ,${b} ,${c}`);
+}
+
+console.log(`Global scope variables are ${a} ,${b} ,${c}`);
+```
+
+Here , the output will be ```Global scope variables are 7 ,2 ,3``` for the outside console and the value of ```a``` is chanhged as 
+var was used to declare it again inside the if statement. Hence , we will get the the value of ```a``` as the one in the if statement.
+
+
+* In case of loops:
+
+If we use loops and see the scope of var , let and const , we see that if we use ```let``` inside the loop to declare ```a``` , then
+the value of the ```a``` inside the outer console.log() is not changed.
+
+```
+for (let a = 0; a < 10; a++) {
+  console.log(`The loop value ${a}`);
+}
+
+console.log(`Global scope variables are ${a} ,${b} ,${c}`);
+```
+
+However , if we use ```var``` for the same , the value of ```a``` will be changed.
+
+```
+for (var a = 0; a < 10; a++) {
+  console.log(`The loop value ${a}`);
+}
+
+console.log(`Global scope variables are ${a} ,${b} ,${c}`);
+``` 
+
+Hence , the output will be ``` Global scope variables are 10 ,2 ,3``` along with the output of all the values of the function.
+
 
 
