@@ -1,8 +1,9 @@
 
-Notes:
+# Notes On Headfirst JavaScript
 
- Chapter 1;
-* varible names = small letter or _. However , one musn't use _ unless really necessary . Use camel casing instead 
+# Chapter 1;
+* Varible names should beign with a small letter . It can have ```_``` . However , one musn't use _ unless really necessary . Use camel casing instead for joining
+two words for variable names
 * page 15 (doubt);
 
 
