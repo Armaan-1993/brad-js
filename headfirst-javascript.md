@@ -4,7 +4,7 @@
 # Chapter 1;
 * Varible names should beign with a small letter . It can have ```_``` . However , one musn't use _ unless really necessary . Use camel casing instead for joining
 two words for variable names
-* page 15 (doubt);
+>>>> page 15 (doubt);
 
 
 # Chapter 2:
@@ -56,7 +56,6 @@ your function with many different arguments.
 * JavaScript passes arguments to a function using pass-by-value , which basically means copying the value of the argument to the
 parameter variable.
 
-* page 93
 * If there more arguments in the function call compared to the parameters , then jvascript will just ignore the extra argument.
 And if its less , the javascript will let the undefined parameter have the value undefined.
 
@@ -82,3 +81,5 @@ and in the second it begins executing your code. So, that allows you to place fu
 
 * Remember to not write any more code after using the retur statement inside the function. It's coz if you use return, then the
 execution of the function will be stopped there and no further code inside the function will be executed.  
+
+>>>> Doubt on page 93
