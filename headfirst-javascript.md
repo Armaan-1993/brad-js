@@ -1,5 +1,5 @@
 
-# Notes On Headfirst JavaScript
+## Notes On Headfirst JavaScript:
 
 # Chapter 1;
 * Varible names should beign with a small letter . It can have ```_``` . However , one musn't use _ unless really necessary . Use camel casing instead for joining
