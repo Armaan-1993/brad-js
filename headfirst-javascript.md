@@ -1,13 +1,13 @@
 
-## Notes On Headfirst JavaScript:
+# Notes On Headfirst JavaScript:
 
-# Chapter 1;
+## Chapter 1;
 * Varible names should beign with a small letter . It can have ```_``` . However , one musn't use _ unless really necessary . Use camel casing instead for joining
 two words for variable names
 >>>> page 15 (doubt);
 
 
-# Chapter 2:
+## Chapter 2:
 
 * We use the varibale "isSunk" and assign it to ```false``` and after the shiip has sunk , we make it to ```true```.
 
@@ -45,7 +45,7 @@ so 1.2 becomes 1, but so does 1.9999. If we generate a number from 0 to 4.999…
 
 Hence to generate random numbers btwn 0 and 99 , we use ```Math.floor(Math.random * 100)`` or ```Math.ceiling(Math.random*99)```
 
-# Chapter 3:
+## Chapter 3:
 
 * Calling of a function is also called as invoking
 * Parameters are the variables in the brackets of the body of the function definition , and the arguments are the variables in the brackets
