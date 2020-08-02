@@ -63,8 +63,26 @@ let scores = [
 ];
 // let i = 0;
 // while (i < scores.length) {
-for (let i = 0; i < scores.length; i++) {
-    let greatest;
-    console.log(`Bubble Solution #${i} score = ${scores[i]}`);
+
+function printAndGetHighScore() {
+    let greatest = 0;
+    for (let i = 0; i < scores.length; i++) {
+        console.log(`Bubble Solution #${i} score = ${scores[i]}`);
+        if (scores[i] > greatest) {
+            greatest = scores[i];
+        }
+    }
+    return greatest;
 }
+function getBestSolutions() {
+    let bestSolutions = [];
+    for (let i = 0; i < scores.length; i++) {
+        if (printAndGetHighScore() === scores[i]) {
+            bestSolutions.push(i);
+        }
+    }
+    return bestSolutions;
+}
+console.log(`The greatest number is ${printAndGetHighScore()}`);
 console.log(`The total number of bubble scores = ${scores.length}`);
+console.log(`The best solutions are ${getBestSolutions()}`);
