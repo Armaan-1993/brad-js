@@ -87,7 +87,7 @@ execution of the function will be stopped there and no further code inside the f
 
 ## Chapter 4:
 
-* Math.rando generates a single random number between 0 and 1 for one refresh. Hence , we multiply it with a whole number to make
+* Math.random generates a single random number between 0 and 1 for one refresh. Hence , we multiply it with a whole number to make
 the generated numbers whole. Thus we use Math.Floor(Math.random * num) to generate numbers between 0 and (num-1) at an instance.
 
 * Its generally easier and a better practice to use a single type of values in an array.
