@@ -83,3 +83,31 @@ and in the second it begins executing your code. So, that allows you to place fu
 execution of the function will be stopped there and no further code inside the function will be executed.  
 
 >>>> Doubt on page 93
+
+
+## Chapter 4:
+
+* Math.rando generates a single random number between 0 and 1 for one refresh. Hence , we multiply it with a whole number to make
+the generated numbers whole. Thus we use Math.Floor(Math.random * num) to generate numbers between 0 and (num-1) at an instance.
+
+* Its generally easier and a better practice to use a single type of values in an array.
+
+* last item of array = array[array.length - 1]
+
+* When adding new items you have to be careful about which index you’re adding. Otherwise you’ll create a sparse array, 
+which is an array with “holes” in it (like an array with values at 0 and 2, but no value at 1).
+
+* An array is actually a special type of object and functions like array.push() are actually built in array functions.
+
+* You can create a sparse array easily, like this:
+     ```var sparseArray = [ ];
+	sparseArray[0] = true;
+	spraseArray[100] = true;```
+
+In this example, the sparseArray has only two values, both true, at indices 0 and 100.The values at all the other indices are
+undefined. The length of the array is 101 even though there are only two values. Remember that all those
+variables take up memory in your computer, even if they don’t have a value, so make sure you have a good reason to create a
+sparse array.
+
+* ```var myarray = new Array(3);``` creates an array of "myarray" of length 3. Then we need to manually add the values in it
+,otherwise it will be undefined because it has no values.
