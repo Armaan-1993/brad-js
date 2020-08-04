@@ -111,3 +111,107 @@ sparse array.
 
 * ```var myarray = new Array(3);``` creates an array of "myarray" of length 3. Then we need to manually add the values in it
 ,otherwise it will be undefined because it has no values.
+
+## Chapter 5:
+
+* Objects can have any types of data
+
+* if you use space in between property names of objects , you need to use quotes to enclose them; 
+	eg ```"my name" : "Armaan"```
+
+* No two properties in an object can have the same name
+
+* With object-oriented programming we think about a problem in terms of objects
+
+* To delete a property , we use the delete keyword , eg : ```delete details.name``` , after which if you access that property , 
+it will be undefined.
+
+* Variables don’t actually hold objects. Instead they hold a reference to an object.The reference is like a pointer or an address to the
+actual object
+
+* When you call a function and pass it an object, you’re passing the object reference, not the object itself. So using our pass by value semantics, a copy of the
+reference is passed into the parameter, and that reference remains a pointer to the original object
+
+* Whatever you change via a function to work the object values , those values will be different inside the objects , 
+even after the function call is over
+
+* We typically refer to functions inside an object as methods.
+
+* Functions inside objects and how to run them:
+eg:
+```
+let dog = {
+    name: "Peggy",
+    petName: "Pegasus",
+    age: 6,
+    breed: "Basset Hound",
+    messageFunction: function () {
+        console.log("We love you Peggy. And we miss you!!");
+    },
+};
+dog.messageFunction();
+```
+* Using a method to change a property is another example of encapsulation whereby we can often improve the maintainability 
+and extensibility of code by letting an object worry about how it gets things done. It’s better to have a start method 
+that knows how to start the car than for you to have to know “to start the car we need to take the started variable and 
+set it to true.” But we get a reference error since JS doesn't knoe where the "started" property is. It is a property if the
+fiat object, but JS doest knoe that as usually when we work with a varible in a function , we need to define a paramter , 
+a local variable or o global variable. Here , the started is a property of the fiat object and not a usual global varibale. But
+JS doesnt knoe that . Hence we define that to JS using the ```this``` keyword. It is used to tell JS that the property defined
+in a function or a condition belongs to that object.
+
+```
+let fiat = {
+    make: "Fiat",
+    model: "500",
+    year: 1957,
+    color: "Medium Blue",
+    passengers: 2,
+    convertible: false,
+    mileage: 88000,
+    started: false,
+    start: function () {
+        this.started = true;
+    },
+    stop: function () {
+        this.started = false;
+    },
+    drive: function () {
+        if (this.started) {
+            console.log("Vroom Vroom");
+        } else {
+            console.log("You need to start your engine first");
+        }
+    },
+};
+```
+* So if you want to access a property inside an object in a function inside the object , we need to use ```this```.
+The real key to understanding this is that whenever a method is called,in the body of that method you can count on this to be 
+assigned to the object whose method was called.
+
+* A method is a function. We just call it a method because it lives inside an object. So, a method can do anything function can 
+do precisely because a method is a function. Hence it can have other local varibales too and not just that of the object.
+
+* We can add a method to an object after it’s created like I can with a property?
+A: Yes. Think of a method as a function assigned to a property, so you can add a new one at any time:
+
+// add a turbo method
+```
+car.engageTurbo =
+function() { ... };
+```
+
+* In order to view the properties of an object , or in order to iterate through them ,we can use the for in loop.
+
+eg:
+```
+for (let prop in fiat) {
+    console.log(prop + ":" + fiat[prop]);
+}
+```
+We use fiat["color"] or fiat.color to access the properties of fiat object , however , fiat["color"] is more flexible as you
+can make it fiat["col" + "or"]
+
+* There are many objects and methods that we use , namely ```console.log``` , where console is an object and log() is a method.
+
+
