@@ -1,23 +1,60 @@
-// let array = [1, 45, 6, 22, 3, 1];
-// for (let i = 0; i < array.length; i++) {
-//     let greatest = array[i];
-//     if (greatest < array[i + 1]) {
-//         greatest = array[i + 1];
-//     }
-//     console.log(greatest);
+let fiat = {
+    make: "Fiat",
+    model: "500",
+    year: 1957,
+    color: "Medium Blue",
+    passengers: 2,
+    convertible: false,
+    mileage: 88000,
+    started: false,
+    fuel: 0,
+    start: function () {
+        if ((this.fuel = 0)) {
+            console.log("No fuel bro");
+        } else {
+            this.started = true;
+        }
+    },
+    stop: function () {
+        this.started = false;
+    },
+    drive: function () {
+        if (this.started) {
+            if (this.fuel > 0) {
+                console.log("Vroom Vroom");
+            } else {
+                console.log("We need to stop the engine as the fuel is slow");
+            }
+        } else {
+            console.log("You need to start your engine first");
+        }
+    },
+    addFuel: function (amount) {
+        this.fuel = this.fuel + amount;
+    },
+};
+
+// fiat.drive();
+// fiat.start();
+// fiat.drive();
+// fiat.stop();
+
+// fiat.start();
+// fiat.drive();
+// fiat.addFuel(2);
+// fiat.start();
+// fiat.drive();
+// fiat.drive();
+// fiat.drive();
+// fiat.stop();
+
+// for (let prop in fiat) {
+//     console.log(prop);
 // }
 
-// let array = [1, 45, 6, 22, 3, 1];
-// array[100] = 453;
-// console.log(array.length);
-// console.log(array[78]);
+for (let prop in fiat) {
+    console.log(prop + ":" + fiat[prop]);
+}
 
-// let myArray = new Array(5);
-// // console.log(myArray.length);
-// genres.push("heavy metal"); //to add new array elements;
-
-// let bestSolutions = [];
-// for (let i = 0; i < Array.length; i++) {
-//     if (greatest === score[i]);
-//     bestSolutions = +score;
-// }
+// fiat["wheel"] = "Bridgestone";
+// console.log(fiat);
