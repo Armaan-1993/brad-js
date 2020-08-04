@@ -214,4 +214,58 @@ can make it ```fiat["col" + "or"]```
 
 * There are many objects and methods that we use , namely ```console.log``` , where ```console``` is an object and ```log()``` is a method.
 
+## Chapter 6:
 
+* DOM - Document Object Model
+
+* When you load a page into the browser, not only does the browser parse the HTML and then render it to the display, it also 
+creates a set of objects that represent your markup. These objects are stored in the DOM. eg: html - head - body -etc
+When JavaScript modifies the DOM, the browser updates the page dynamically, so you see new content on your page.
+
+* HTML and JavaScript are two different languages , but they are interact and communicate with each other using DOM. Its the commin link between both the languages.
+JS gets access to the page using ```getElementById```
+ 
+* The document is an object which represents the entire page in your browser and contains the complete DOM, so we can ask it to do things like find an element 
+with a specific id. 
+
+* An element object is the browser’s internal representation of what you type into your HTML file, like <p>some text</p>. When the browser loads and
+parses your HTML file, it creates an element object for every element in your page, and adds all those element objects to the DOM.
+
+* ```getElementById``` returns the element which has that id.
+
+* After which , we save that data to an variable , and then we can manupulate that data using javascript.
+
+* When you grab an element from the DOM using getElementById, what you get is an element object, which you can use to read, change or replace the element’s 
+content and attributes.We can dp the following => Change Stuf , get attributes , change attributes , remove attributes , add attributes etc
+
+* We can use the innerHTML property of the element object to change the content of the element!  
+
+* We label the elements using id's or classes. Each element should contain a unique id or class for them to be distinguished.
+
+*  If you try to get an element from the DOM by id, and that id doesn’t exist in an element, then the call to ```getElementById``` returns a null value. Testing for 
+null is a good idea when you use ```getElementById``` to ensure that the element is there before you try to access its properties.
+
+* There is another DOM method named ```getElementsByClassName``` that you can use to get elements by class name. With this method, what you get back is a collection
+of elements that belong to the class (becaus multiple elements can be in the same class). Another method that returns a collection of elements is 
+```getElementsByTagName```, which returns all elements that match the tag name you specify.
+
+* Make sure to add the script tag linking the Javascript file to the end of the body tag , because if you link to the head or to the top of the body , the
+the js code will start executing before the DOM and its element objects have been created by the browser. Hence it will return null and none of the JS code will
+be effective.
+
+* If we want to write the jawascript above the body or in the head anyways , we need to specify to the browser that the js should be executed only after bulding
+the DOM. Hence we use ```window.onload``` property.
+
+eg: 
+```
+<script>
+            function init() {
+                let planet = document.getElementById("greenplanet");
+                planet.innerHTML = "Red alert: Hit by fire";
+            }
+            window.onload = init;
+        </script>
+```
+Here, we are not calling the function ```init```. We are just assigning the function to windows.onload property , so as to load it after the DOM has been bulit.
+
+* 
