@@ -212,6 +212,6 @@ for (let prop in fiat) {
 We use ```fiat["color"]``` or ```fiat.color``` to access the properties of fiat object , however , ```fiat["color"]``` is more flexible as you
 can make it ```fiat["col" + "or"]```
 
-* There are many objects and methods that we use , namely ```console.log``` , where console is an object and log() is a method.
+* There are many objects and methods that we use , namely ```console.log``` , where ```console``` is an object and ```log()``` is a method.
 
 
