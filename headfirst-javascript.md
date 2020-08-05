@@ -268,4 +268,15 @@ eg:
 ```
 Here, we are not calling the function ```init```. We are just assigning the function to windows.onload property , so as to load it after the DOM has been bulit.
 
-* 
+* Using ```window.onload = function name;``` is a crucial method to run the javascript code wherever you want , after the DOM has been built by the browser
+
+* We use ```elementName.setAttribute("class", "redtext");``` to add or edit an attribute inside the element object. Here , when we add a class , the element 
+object has an id = "greenplanet" and class = "redtext".  Followed by using css styling to make the text red in color using the class "redtxt"
+
+* However , if you want to get the value of an attribute of an element , use ```getAttribute```.
+eg:
+
+```planet.getAttribute("id")``` ,  where ("id") is the name of the attribute. If you want the attribute of class , then use ```planet.getAttribute("class")```.
+Similarly to the case where ```getElementById``` returns ```null``` when the docment object cant find an element with such an id , if the specified attribute is
+not available in the element , then ```getAttribute``` returns ```null```.
+Hence , it we need ti test for ```null``` value in some cases.
