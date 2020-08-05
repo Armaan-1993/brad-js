@@ -2,10 +2,33 @@
 <html>
     <head>
         <title>Chapter 6</title>
+        <!-- <style>
+            .redtext {
+                color: red;
+            }
+        </style> -->
+        <style>
+            .redtext {
+                color: green;
+            }
+        </style>
+        <!-- <link rel="stylesheet" href="chapter6.css" /> -->
         <script>
             function init() {
                 let planet = document.getElementById("greenplanet");
                 planet.innerHTML = "Red alert: Hit by fire";
+                planet.setAttribute("class", "redtext");
+                // console.log(planet.getAttribute("id"));
+                // console.log(planet.getAttribute("class"));
+                // console.log(planet.getAttribute("img"));
+                if (planet.getAttribute === null) {
+                    console.log("The required attribute isn't available");
+                } else {
+                    console.log(
+                        "The attribute of the element is " +
+                            planet.getAttribute("class")
+                    );
+                }
             }
             window.onload = init;
         </script>
