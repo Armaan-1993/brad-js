@@ -3,4 +3,4 @@
 // };
 // getName("Armaan");
 
-console.log("This is a new function");
+// console.log("This is a new function");
