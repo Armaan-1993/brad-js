@@ -280,3 +280,52 @@ eg:
 Similarly to the case where ```getElementById``` returns ```null``` when the docment object cant find an element with such an id , if the specified attribute is
 not available in the element , then ```getAttribute``` returns ```null```.
 Hence , it we need ti test for ```null``` value in some cases.
+
+* ```NaN``` is not not a number and it cannot be used for equality purposes or equations.
+
+* Even though ```NaN``` cannot be represented in javascript , it is a number. WE get the number type when we use ```typeof``` operator to check it's type.
+
+* Use ```isNaN(variable)``` to check if the varible has a NaN value or not
+
+* In a line ```let x = 99;
+		if (x == '99') {
+		console.log("They're equal");```
+		
+In this code , JS compares 99 and "99" and concludes to equality. JS is smart enough to underdtand this comparison. Here , JS converts the string into number first and then makes the comparison of their values. BUt this only applies to the strings that can be convereted to numbers.
+
+* In case of comparing boolean with numbers/strings that can be converted to numbers, if the number/string is 0 or 1 , 1 is equal to ```true``` and 0 is equal to ```false```.
+
+* ```==``` only checks the value of equality and not the types during comparison.
+
+* 
+```let x = null;
+if (x == undefined) {
+  console.log("It's true");
+}
+ ```
+
+
+* Here , ```undefined``` and ```null``` results ```true``` as they both represent no value and hence they're true. However , if we use ```===``` it would have been a different case as it compares the value and the types.
+
+
+```
+let x = "";
+if (x == true) {
+  console.log("It's true");
+} else {
+  console.log("It's false");
+}
+```
+
+* In this case , it yeilds to ```false``` ,as '' is considered as 0. Hence , it evaluates 1==0 and gets false.
+
+* In cases like ```"3" + 5``` , JS converts the number 5 into strng cand concatinates them with
+giving the result "35". Thats how addition of strings work. However , if it was ```5 - "3"``` , then the result would be 2 , as this opeartion has to be done and jS converts the string "3" to number and provides the difference 2. This is the same case in ```3 * "4"```. The answer will be a number of 12.
+
+*  To remember which values are truthy and which are falsey, just memorize the five falsey values ```undefined, null, 0, "” and NaN``` and remember that everything else is truthy.
+
+* [] = truthy,
+  {} = truthy,
+  {name:null} and passing the proprty name will give it null and thus falsey,
+  [0] = falsey, if the element [0[ doesn't exist , ie if the array was an empty array from the
+  start
