@@ -266,6 +266,9 @@ eg:
             window.onload = init;
         </script>
 ```
+
+## Chapter 7:
+
 Here, we are not calling the function ```init```. We are just assigning the function to windows.onload property , so as to load it after the DOM has been bulit.
 
 * Using ```window.onload = function name;``` is a crucial method to run the javascript code wherever you want , after the DOM has been built by the browser
