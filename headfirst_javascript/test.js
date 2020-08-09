@@ -1,37 +1,37 @@
 let fiat = {
-    make: "Fiat",
-    model: "500",
-    year: 1957,
-    color: "Medium Blue",
-    passengers: 2,
-    convertible: false,
-    mileage: 88000,
-    started: false,
-    fuel: 0,
-    start: function () {
-        if ((this.fuel = 0)) {
-            console.log("No fuel bro");
-        } else {
-            this.started = true;
-        }
-    },
-    stop: function () {
-        this.started = false;
-    },
-    drive: function () {
-        if (this.started) {
-            if (this.fuel > 0) {
-                console.log("Vroom Vroom");
-            } else {
-                console.log("We need to stop the engine as the fuel is slow");
-            }
-        } else {
-            console.log("You need to start your engine first");
-        }
-    },
-    addFuel: function (amount) {
-        this.fuel = this.fuel + amount;
-    },
+  make: "Fiat",
+  model: "500",
+  year: 1957,
+  color: "Medium Blue",
+  passengers: 2,
+  convertible: false,
+  mileage: 88000,
+  started: false,
+  fuel: 0,
+  start: function () {
+    if ((this.fuel = 0)) {
+      console.log("No fuel bro");
+    } else {
+      this.started = true;
+    }
+  },
+  stop: function () {
+    this.started = false;
+  },
+  drive: function () {
+    if (this.started) {
+      if (this.fuel > 0) {
+        console.log("Vroom Vroom");
+      } else {
+        console.log("We need to stop the engine as the fuel is slow");
+      }
+    } else {
+      console.log("You need to start your engine first");
+    }
+  },
+  addFuel: function (amount) {
+    this.fuel = this.fuel + amount;
+  },
 };
 
 // fiat.drive();
@@ -53,7 +53,7 @@ let fiat = {
 // }
 
 for (let prop in fiat) {
-    console.log(prop + ":" + fiat[prop]);
+  console.log(prop + ":" + fiat[prop]);
 }
 
 // fiat["wheel"] = "Bridgestone";

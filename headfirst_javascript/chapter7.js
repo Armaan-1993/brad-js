@@ -34,6 +34,6 @@
 let name = "Armaan";
 console.log(typeof name);
 function test() {
-    return name;
+  return name;
 }
 console.log(typeof test);
