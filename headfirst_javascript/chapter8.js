@@ -1,4 +1,26 @@
-//making an app
+//making an app - battlegip game
+
+function init() {
+  let fireButton = document.getElementById("fireButton");
+  fireButton.addEventListener("click", handleFireButton);
+  let guessInput = document.getElementById("guessInput");
+  guessInput.addEventListener("keypress", handleKeyPress);
+}
+
+function handleKeyPress(e) {
+  let fireButton = document.getElementById("fireButton");
+  if (e.keycode === 13) {
+    fireButton.click();
+    return false;
+  }
+}
+
+// function handleFireButton() {
+//   let guessInput = document.getElementById("guessInput");
+//   let guess = guessInput.value;
+//   controller.processGuess(guess);
+//   guessInput.value = "";
+// }
 
 //the main view object
 let view = {
@@ -43,6 +65,9 @@ let model = {
   //     }
   //   }
   // },
+
+  //fire property
+
   fire: function (guess) {
     for (let i = 0; i < this.numShips; i++) {
       let ship = this.ships[i];
@@ -65,6 +90,9 @@ let model = {
     view.displayMessage("You Missed!");
     return false;
   },
+
+  //isSunk function
+
   isSunk: function (ship) {
     for (let i = 0; i < this.ships.length; i++) {
       // let ship = this.ships[i];
@@ -80,39 +108,50 @@ let model = {
 // let hits = ship1.location;
 // console.log(hits[2]);
 
-model.fire("65");
+// model.fire("65");
 
-//controller
+//controller object
 let controller = {
   guesses: 0,
-  parseGuesses: function (guess) {
-    let alphabet = ["A", "B", "C", "D", "E", "F", "G"];
-    if (guess === null || guess.length !== 2) {
-      alert("Please enter the correct number to play the game!");
-    } else {
-      let firstChar = guess.charAt(0); //charAt is used to return a string at a required position as it's argument
-      let row = alphabet.indexOf(firstChar);
-      let column = guess.charAt(1);
-      if (
-        isNaN(row) === true ||
-        row >= model.boardSize ||
-        isNaN(column) === true ||
-        column >= model.boardSize
-      ) {
-        alert("Please enter the guesses again!");
-      } else if (row < 0 || column < 0) {
-        alert(
-          "Those number are not on the board and they are too small. Please re-enter"
+  processGuess: function (guess) {
+    let location = parseGuesses(guess);
+    if (location === true) {
+      this.guesses++;
+      let hit = model.fire(location); //as model.fire returns true;
+      if (hit === true && model.shipsSunk === numShips) {
+        view.displayMessage(
+          "You have sunk all of the ships with " + this.guesses + " guesses"
         );
-      } else {
-        return row + column;
-        // console.log(row + column);
       }
     }
-    return null;
   },
 };
-// controller.parseGuesses("A5");
-// controller.parseGuesses("W9");
-// controller.parseGuesses("H0");
-// controller.parseGuesses("A7");
+
+//function to validate the guess input by the user
+parseGuesses = function (guess) {
+  let alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+  if (guess === null || guess.length !== 2) {
+    alert("Please enter the correct number to play the game!");
+  } else {
+    let firstChar = guess.charAt(0); //charAt is used to return a string at a required position as it's argument
+    let row = alphabet.indexOf(firstChar);
+    let column = guess.charAt(1);
+    if (
+      isNaN(row) === true ||
+      row >= model.boardSize ||
+      isNaN(column) === true ||
+      column >= model.boardSize
+    ) {
+      alert("Please enter the guesses again!");
+    } else if (row < 0 || column < 0) {
+      alert(
+        "Those number are not on the board and they are too small. Please re-enter"
+      );
+    } else {
+      return row + column;
+      // console.log(row + column);
+    }
+  }
+  return null;
+};
+// controller.processGuess("A6");
