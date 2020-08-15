@@ -332,3 +332,83 @@ giving the result "35". Thats how addition of strings work. However , if it was 
   {name:null} and passing the proprty name will give it null and thus falsey,
   [0] = falsey, if the element [0[ doesn't exist , ie if the array was an empty array from the
   start
+  
+## Chapter 9:
+
+* An event is an activty that happens inside the web page, which is performed by the browser. However, if you want to control it . you need to specify code for a particular event and this
+gives your code an oppertunity to handle the event. All the other events are handled by the browser.
+
+* An event handler is a function that handles an event. When an event occurs , the function handling that particular event is called.
+
+* We can set the src of a variable ```image``` containing the reference to an image by using ```image.src```.
+
+* ```getElementByTagName``` owrks just like ```getElementById``` except that it returns an element after trying to match that element by its HTML tag. 
+
+* Here ,```getElementsByTagName``` is used which returns an object of images. However , we can use those images by looping them with a for loop by iterating them as an array like procedure,
+which is ```images.length```.
+
+* We can use a single event handler function for many elements. However , for each element in this case , we are writing the function "showUnblurred" again so as to change its image to the unblurred version.
+
+* THe HTML element at which the event occurs is called as the ```target```
+The ```target``` is a property of the event object
+
+* When an event happens , an event object is created. It contains all the details of the event and it is passed to the event handler.
+
+* to loop through multiple events:
+```
+function pageLoadEvent() {
+  let images = document.getElementsByTagName("img");
+  // console.log(images);
+  for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", showUnblurred);
+  }
+}
+window.onload = pageLoadEvent;
+
+function showUnblurred(eventObject) {
+  let image = eventObject.target;
+  let idName = image.id;
+  idName = idName + ".jpg";
+  image.src = idName;
+}
+```
+* ```clientX``` , ```clientY``` are used to find the co-ordinates of an element in the html page.
+These are methods of the event object. You can use them in the given manner:
+```x = eventObject.clientX;
+   y = eventObject.clientY;
+   ```
+* Other methods used to find the coordinates are:
+1. ```pageX , pageY```
+2  ```screenX , screenY```
+
+* Using ```setTimeout()``` event: 
+You can use this function in such a way that the event handler is defined with what you need to do after the required time , then call setTimeout using the event handler , outside that event handler funtion.
+
+```
+function testTimeout() {
+  alert("What on earth are you doing looking at the screen!");
+}
+setTimeout(testTimeout, 5000);
+```
+* ```setInterval``` is used to run the event handler function as many as times you want , after the specified interval defined in the set interval function.
+
+You can stop the ```setInterval``` function because it returns a timer object.If you pass the timer object to a ```clearInterval``` function , it stops.
+
+``` 
+let test = true;
+function testsetInterval() {
+  if (test) {
+    console.log("tick");
+    test = false;
+  } else {
+    console.log("tock");
+    test = true;
+  }
+}
+setInterval(testsetInterval, 1000);
+``` 
+The event listeners used here are:
+
+1. ```click```
+2. ```mousemove```
+3. ```keypress```
