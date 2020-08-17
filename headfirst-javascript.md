@@ -496,3 +496,44 @@ function servePassengers(passengers) {
 }
 servePassengers(passengers);
 ```
+## Chapter 11:
+
+* Anonymous functions are those functions which doesnt have a name
+
+* To use an anonymous function in the case of window.onload method() , we remove the fucntion name of the function decleration and them dirrectly assign the function to the window.onload method.
+
+eg:
+```
+window.onload = function () {
+  alert("Everythig is good");
+};
+```
+
+* Another example in setTimeout:
+
+```
+setTimeout(function () {
+  alert("The cookies are done baking! Time to get them out of the oven");
+}, 6000);
+```
+* Basically , we use anonymous functions to save function names  In other words , we use them in cases where the function needs to be run only once.
+
+* In the case of function declarations , they can be defined at any part of the program , as fucntion declerations get already saved to a refrence varibale by the browser during it's first pass. They can also be called anywhere as well and won't throw an error.
+
+However , function expressions cannot be called or defined in such a manner as they are evaulated only in the second pass of the code by the browser. Hence , we need to make sure that the function is called only after the function definition , otherwise it will throw a reference error.
+
+eg:
+
+```
+name("Armaan");
+let name = function (myName) {
+  console.log(`My name is ${myName}`);
+};
+```
+Here , there will be reference error as the function expression is  called before its defintion. Hence the function call will be evaluated first and it will be undefined.
+
+* Functions defined at the top level of your code have global scope, whereas functions defined within another function have local scope. 
+
+* Within a function, if you define a nested function with a declaration, that nested function is defined everywhere within the body of the function. On the other hand, if you create a nested function using a function expression, then that nested function is defined only after the function expression is evaluated.
+
+* 
