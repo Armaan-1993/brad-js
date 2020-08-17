@@ -121,12 +121,87 @@ let passengers = [
 // return false;
 // processPassengers(passengers, printPassenger);
 
-function getName(name) {
-  console.log(name);
-}
-getName("armaan");
+// function getName(name) {
+//   console.log(name);
+// }
+// getName("armaan");
 
-function boo(noni) {
-  noni("rehaan");
+// function boo(noni) {
+//   noni("rehaan");
+// }
+// getName(boo);
+
+//today
+// function age(myage) {
+//   console.log("MY age is " + myage);
+// }
+// age(26);
+
+// function name(myname) {
+//   console.log(myname + " is Armaan");
+// }
+// // age(name);
+// name(age);
+// function name(myname) {
+//   myname("Armaan");
+// }
+// // name(age);
+// age(name);
+
+// var passengers = [
+//   { name: "Jane Doloop", paid: true, ticket: "coach" },
+//   { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+//   { name: "Sue Property", paid: false, ticket: "firstclass" },
+//   { name: "John Funcall", paid: true, ticket: "coach" },
+// ];
+// function serveCustomerpakage() {
+//   //drinks
+//   //dinner order
+//   //pickup thrash
+// }
+
+// function serveDrinks() {
+//   if (`${passengers.ticket} = "firstclass"`) {
+//     console.log("WE serve cocktail and wine");
+//   } else {
+//     console.log("We serve water");
+//   }
+// }
+
+var passengers = [
+  { name: "Jane Doloop", paid: true, ticket: "coach" },
+  { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+  { name: "Sue Property", paid: false, ticket: "firstclass" },
+  { name: "John Funcall", paid: true, ticket: "coach" },
+];
+
+function createDrinkOrder(passengers) {
+  let orderFunctioon;
+  if (passengers.ticket === "firstclass") {
+    orderFunctioon = function () {
+      console.log("We offer wine and cocktails");
+    };
+  } else {
+    orderFunctioon = function () {
+      console.log("We offer coke and water");
+    };
+  }
+  return orderFunctioon;
 }
-getName(boo);
+
+function serveCustomerpakage(passengers) {
+  let getOrderFunction = createDrinkOrder(passengers);
+  //before breakfast
+  getOrderFunction();
+  //beforelunch
+  getOrderFunction();
+  //evening
+  getOrderFunction();
+}
+
+function servePassengers(passengers) {
+  for (let i = 0; i < passengers.length; i++) {
+    serveCustomerpakage(passengers[i]);
+  }
+}
+servePassengers(passengers);
