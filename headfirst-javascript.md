@@ -412,3 +412,87 @@ The event listeners used here are:
 1. ```click```
 2. ```mousemove```
 3. ```keypress```
+
+## Chapter 10:
+
+* functions can also be represented as 
+```let func = function(num) {
+   for(let i = 0; i < num; i++) {
+      console.log("yo");
+   }
+  }
+func(5);
+```
+Here , the function is called by the varaible type function is being reffered to.
+This is a function expression.
+
+* The browser goes through the code to firstly look for function declarations and then then stores them away in a refrence varible with which it can be called later on when the function is called.
+
+* A usal expressipn ```3+4 = 7``` evaluates to 7 , a value. Likewise, a  function expression evalutes to a function reference.
+
+* In the case of , function expressions , the functions are created during thr execution of the code. However , function declerations are reffered to a variable at the begining when the browser checks the code at first view.
+Secondly, the function expression doesn't provide a name to the function itself. The vaiable it is assigned to is used to for calling , returning values etc.
+
+* It doesn't matter how you create functions , but the varible in function declerations and that in function expression , both contain a refernce to the function itself. Hence it can be regarded as a value  , an can be assigned on to other variables which can be used to call them.
+
+eg: 
+
+* We need to treat a function like a value
+
+* We can call functions inside other functions . eg:
+```
+function getName(name) {
+  console.log(name);
+}
+getName("armaan");
+
+function boo(noni) {
+  noni("rehaan");
+}
+getName(boo);
+```
+
+
+* In some cases , we can use a function to call another function and we can also return a functon just like we return a value.
+
+eg: In the case of an array of objects ,where each object contains the details of a customer, then we can use this an as an option for better code.
+
+```
+var passengers = [
+  { name: "Jane Doloop", paid: true, ticket: "coach" },
+  { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+  { name: "Sue Property", paid: false, ticket: "firstclass" },
+  { name: "John Funcall", paid: true, ticket: "coach" },
+];
+
+function createDrinkOrder(passengers) {
+  let orderFunctioon;
+  if (passengers.ticket === "firstclass") {
+    orderFunctioon = function () {
+      console.log("We offer wine and cocktails");
+    };
+  } else {
+    orderFunctioon = function () {
+      console.log("We offer coke and water");
+    };
+  }
+  return orderFunctioon;
+}
+
+function serveCustomerpakage(passengers) {
+  let getOrderFunction = createDrinkOrder(passengers);
+  //before breakfast
+  getOrderFunction();
+  //beforelunch
+  getOrderFunction();
+  //evening
+  getOrderFunction();
+}
+
+function servePassengers(passengers) {
+  for (let i = 0; i < passengers.length; i++) {
+    serveCustomerpakage(passengers[i]);
+  }
+}
+servePassengers(passengers);
+```
