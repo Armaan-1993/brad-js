@@ -160,13 +160,13 @@ let passengers = [
 //   //pickup thrash
 // }
 
-// function serveDrinks() {
-//   if (`${passengers.ticket} = "firstclass"`) {
-//     console.log("WE serve cocktail and wine");
-//   } else {
-//     console.log("We serve water");
-//   }
-// }
+function serveDrinks() {
+  if (`${passengers.ticket} = "firstclass"`) {
+    console.log("WE serve cocktail and wine");
+  } else {
+    console.log("We serve water");
+  }
+}
 
 var passengers = [
   { name: "Jane Doloop", paid: true, ticket: "coach" },

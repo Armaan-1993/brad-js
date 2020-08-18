@@ -27,8 +27,26 @@
 // };
 // administer(patient, vaccine, time);
 
-name("Armaan");
-let name = function (myName) {
-  console.log(`My name is ${myName}`);
-};
 // name("Armaan");
+// let name = function (myName) {
+//   console.log(`My name is ${myName}`);
+// };
+// name("Armaan");
+// let myName = "Armaan";
+// function name() {
+//   let myName = "Rehaan";
+//   return myName;
+// }
+// console.log(name());
+
+let myName = "Armaan";
+function name() {
+  let myName = "Rehaan";
+  let mandrake = function () {
+    // mandrake("Armaan");
+    return myName;
+  };
+  // return inner();
+  console.log(mandrake());
+}
+console.log(name());

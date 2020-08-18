@@ -1,8 +1,18 @@
-function final(x) {
-  function addnum(num) {
-    return num + x;
+function createDrinkOrder() {
+  if (`${passengers.ticket} = "firstclass"`) {
+    console.log("WE serve cocktail and wine");
+  } else {
+    console.log("We serve water");
   }
-  return final(addnum);
 }
-final(5);
-addnum(3);
+
+function serveCustomer(passenger) {
+  createDrinkOrder(passenger);
+  // get dinner order
+  createDrinkOrder(passenger);
+  createDrinkOrder(passenger);
+  // show movie
+
+  createDrinkOrder(passenger);
+}
+// pick up trash
