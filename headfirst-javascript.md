@@ -536,4 +536,39 @@ Here , there will be reference error as the function expression is  called befor
 
 * Within a function, if you define a nested function with a declaration, that nested function is defined everywhere within the body of the function. On the other hand, if you create a nested function using a function expression, then that nested function is defined only after the function expression is evaluated.
 
-* 
+* Lexical just means you can determine the scopr of the variable just by reading the structure of the code and not waiting for the whole code to finish executing.
+
+* In the below case , we use lexical scope , ie the function when called will look for the myName variable with the nearest scope. Hence it will return the one in the local scoope.
+
+```let myName = "Armaan";
+function name() {
+  let myName = "Rehaan";
+  return myName;
+}
+console.log(name());
+```
+* When you return an inner function , it returns the function body as well as the environment it is linked to.
+If you have a function that is returned from within a function, it carries its environment around with it.
+ 
+ eg:
+ 
+ ```
+ let name = "Armaan";
+function oldName() {
+  let name = "Rehaan";
+  function newName() {
+    return name;
+  }
+  return newName();
+}
+let newValue = oldName();
+console.log(newValue);
+``` 
+When you return newName() , it carries with it the variable ```name = "Rehaan"``` , as it
+belongs to the function environment.
+
+* Free varibales are those whicha are not defined inside the function.
+* Closures:
+
+
+
