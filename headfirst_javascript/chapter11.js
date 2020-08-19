@@ -39,14 +39,27 @@
 // }
 // console.log(name());
 
-let myName = "Armaan";
-function name() {
-  let myName = "Rehaan";
-  let mandrake = function () {
-    // mandrake("Armaan");
-    return myName;
-  };
-  // return inner();
-  console.log(mandrake());
+// let myName = "Armaan";
+// function name() {
+//   let myName = "Rehaan";
+//   let mandrake = function () {
+//     // mandrake("Armaan");
+//     return myName;
+//   };
+//   // return inner();
+//   console.log(mandrake());
+// }
+// console.log(name());
+
+//today
+
+let name = "Armaan";
+function oldName() {
+  let name = "Rehaan";
+  function newName() {
+    return name;
+  }
+  return newName();
 }
-console.log(name());
+let newValue = oldName();
+console.log(newValue);
