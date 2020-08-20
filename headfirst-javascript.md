@@ -571,4 +571,103 @@ belongs to the function environment.
 * Closures:
 
 
+## Chapter 12:
 
+* Object cinstructors are used to create many objects of the similar type. It comes in handy during the creation of objects in bulk of the same type , with different properties.
+eg: Different varieties of cars of the same company
+
+* A constructor is quite similar to a function that returns an object: you define it once and invoke it every time you want to create a new object
+
+* For the object ,
+```
+let dog = {
+  name: "Fido",
+  breed: "Mixed",
+  weight: 38,
+};
+``` 
+A constructor can be created as  , 
+
+```
+function Dog(name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
+}
+```
+This the syntax of a constructor
+
+* In order to use the constructor , we use the ```new``` keyword . Also, as a convention, start constructor names with a capital letter.
+It is given by the following example:
+
+ ```new Dog("Peggy", "basset hound", "38");```
+ Lets make it```let peggy = new Dog("Peggy", "basset hound", "38");```
+ In this case, the variable ```peggy``` has the reference to this object. 
+ Remember that new first creates a new object before assigning it to this (and then calling your constructor function). If you don’t use new, a new object will never be created.
+ 
+ * The way the contructor is created is :
+ 1.The first thing new does is create a new, empty object:
+
+ 2.Next, new sets ```this``` to point to the new object
+
+ 3.With ```this``` set up, we now call the function Dog,while passing in new arguments to its properties just like we do while calling a function.
+ 
+ 4.Finally, once the Dog function has completed its execution the new operator returns ```this```, which is a reference to the newly created object. Notice this is returned for you. You don’t have to explicitly return it in your code. And after the new object has been returned, we assign that reference to the variable ```peggy```.
+
+* In cases of many parameters in the constructor , there will be many arguments when we define and object as well and  hence it will be difficult to read the code. Hence we use a single parameter in the constructor and we pass the arguemnts into the constructor as an object. As a result ,the code becomes a lot more cleaner.
+
+* The objects created in the constructor by using the ```new``` keyword are instances of the Constructor.
+
+* Using ```instanceof``` operator will allow us to check if the varible to which a new object to be created into the constructor is reffered to is an instance of that constructor.
+
+eg:
+```
+if (cadi instanceof Car) {
+console.log("Congrats, it's a Car!");
+};
+```
+* Always use ```instanceof``` oeprator to check if an object is an instance of a particular constructor.
+
+eg: 
+
+```
+function dogCatcher(obj) {
+  if (obj instanceof Dog) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+* The ```new Date()``` is used to create an object with the current date and times.
+You can get specific info from that object like ,
+```let now = new Date() 
+   let mydate = now.getFullYear()
+```
+   
+   This ```getFullYear()``` returns the year property's value in the Date object.
+   
+ * You can convert the Date object data into string by using ```toString```,
+ eg:
+ 
+ ```let now = new Date() 
+   let mydate = now.getFullYear()
+   mydate = now.toString()
+   ```
+   
+* To create an array using the ```new``` keyword ,  ```let newArray = new Array(3)``` .
+Here , we create an array with size 3.
+
+You can later add elements to it the usual way:
+
+```newArray[0] = 5;
+  newArray[1] = 12;
+  ```
+
+
+* Using the ```every()``` , you can check every element of an array and it will return true or false for the defined condition. 
+
+```let result = newArray.every(function (x) {
+  return x % 5 === 0;
+  });
+  ```
