@@ -1,8 +1,15 @@
-function createDrinkOrder() {
-  if (`${passengers.ticket} = "firstclass"`) {
-    console.log("WE serve cocktail and wine");
+let passengers = [
+  { name: "Jane Doloop", paid: true, ticket: "coach" },
+  { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+  { name: "Sue Property", paid: false, ticket: "firstclass" },
+  { name: "John Funcall", paid: true, ticket: "coach" },
+];
+
+function createDrinkOrder(passenger) {
+  if (`${passenger.ticket} === "firstclass"`) {
+    console.log("Would you like a cocktail or wine");
   } else {
-    console.log("We serve water");
+    console.log("Your choice is Cola or Water");
   }
 }
 
@@ -12,7 +19,6 @@ function serveCustomer(passenger) {
   createDrinkOrder(passenger);
   createDrinkOrder(passenger);
   // show movie
-
   createDrinkOrder(passenger);
+  // pick up trash
 }
-// pick up trash
