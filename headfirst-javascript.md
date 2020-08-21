@@ -573,7 +573,7 @@ belongs to the function environment.
 
 ## Chapter 12:
 
-* Object cinstructors are used to create many objects of the similar type. It comes in handy during the creation of objects in bulk of the same type , with different properties.
+* Object constructors are used to create many objects of the similar type. It comes in handy during the creation of objects in bulk of the same type , with different properties.
 eg: Different varieties of cars of the same company
 
 * A constructor is quite similar to a function that returns an object: you define it once and invoke it every time you want to create a new object
