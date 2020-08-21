@@ -671,3 +671,38 @@ You can later add elements to it the usual way:
   return x % 5 === 0;
   });
   ```
+## Chapter 13:
+
+* When we use constructors and define new objects to it using the new keyword , then for each method defined inside the constructor(if any) , will be copied as a function for each object instance created, which in turn takes away more memory. Hence , we use prototyes and the property of inheritance for solving this problem.
+
+* The functions that can be reused for each object are called prototypes.
+
+* When you call a method for an object , JS checks if the method is defined in the new instance object, and will be unable to find it in this case. It then checks the prototypes. It will find the method , eg ```bark()``` in it and then will be able to call it.
+
+* In order to define prototype , you use the following syntax given as an example:
+
+```Dog.prototype.bark = function (){
+    if(this.weight > 20) {
+      console.log("Woof Woof");
+    } else {
+      console.log("WOOF");
+    }
+   }
+   peggy.bark();
+ ```
+ It's all the same method here as contructors , except you need to seperately add functions to prototypes by calling the prototype property of the constructor and then defining the fucntion for that specific prototype.
+ 
+ * Since the prototypes are inherited from all new instance objects , you can add specific functions to intance objects if you's like.
+ 
+ eg
+ ```peggy.bark = function() {
+ 	console.log("WOOF WOOF WOOF");
+    }
+ ```
+ 
+ * If you add  a new property to the ```Dogs.protoype```, all the dogs objects will inherit that property. The same is the case if you change anything in the method defined as the prototype.
+ 
+ * To check if a property is a part of the instant objects , we can use ```hasOwnPropert()``` and it will return true or false.
+ 
+ eg: ```let property = peggy.hasOwnProperty("sitting")```
+ 
